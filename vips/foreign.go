@@ -252,6 +252,7 @@ func vipsLoadFromBuffer(buf []byte, o ...ImportOption) (*C.VipsImage, ImageType,
 		code = C.load_gif_buffer(unsafe.Pointer(&src[0]), C.size_t(len(src)), &out,
 			C.int(options.params.page), C.int(options.params.n))
 	case ImageTypePDF:
+		govipsLog("govips", LogLevelInfo, fmt.Sprintf("pdf options page=%d n=%d dpi=%f scale=%f", options.params.page, options.params.n, options.params.dpi, options.params.scale))
 		code = C.load_pdf_buffer(unsafe.Pointer(&src[0]), C.size_t(len(src)), &out,
 			C.int(options.params.page), C.int(options.params.n), C.double(options.params.dpi),
 			C.double(options.params.scale))
