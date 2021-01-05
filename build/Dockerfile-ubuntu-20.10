@@ -13,10 +13,10 @@ RUN add-apt-repository -y ppa:tonimelisma/ppa
 RUN apt-get -y install --no-install-recommends libvips-dev
 RUN go get golang.org/dl/go1.15.4
 RUN ~/go/bin/go1.15.4 download
-RUN mkdir -p ~/go/src/github.com/davidbyttow
-RUN cd ~/go/src/github.com/davidbyttow  && git clone -v https://github.com/davidbyttow/govips.git
-RUN cd ~/go/src/github.com/davidbyttow/govips && ~/go/bin/go1.15.4 get ./...
-RUN cd ~/go/src/github.com/davidbyttow/govips && ~/go/bin/go1.15.4 test -v ./...
+RUN mkdir -p ~/go/src/github.com/seambiz
+RUN cd ~/go/src/github.com/seambiz  && git clone -v https://github.com/seambiz/govips.git
+RUN cd ~/go/src/github.com/seambiz/govips && ~/go/bin/go1.15.4 get ./...
+RUN cd ~/go/src/github.com/seambiz/govips && ~/go/bin/go1.15.4 test -v ./...
 
 
 ENV DEBFULLNAME="Toni Melisma"
